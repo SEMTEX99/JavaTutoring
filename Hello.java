@@ -1,6 +1,6 @@
 public class Hello {
-    public static void main(String[] args) {
-        String text = "ligmaballssonhagotembuteverytimethereisabugilooseanotherbitofsanityandtrytonotkillmyselfbecauseofthisballoonsproblemsinceitissomethingabeginnerwouldknowandidontknowshitsogodhelpmeifidontresorttokillingmyselffoverthisretardedproblemhahahahahahahahahahgodie";
+    public int solution(String inputtext) {
+        String text = inputtext.replaceAll("[^a-zA-Z]", "").toLowerCase();
         int count = 0;
         int b = 0;
         int a = 0;
@@ -32,6 +32,6 @@ public class Hello {
             o = o - 2;
             n--;
         }
-        System.out.println(count);
+        return count;
     }
 }
