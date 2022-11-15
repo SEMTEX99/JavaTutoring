@@ -1,5 +1,6 @@
 public class Hello {
     public int solution(String inputtext, String inputword) {
+        //clean up the inputs so there is no possible way of triggering any errors
         String randomChar = inputtext.replaceAll("[^a-zA-Z]", "").toLowerCase();
         String word = inputword.replaceAll("[^a-zA-Z]", "").toLowerCase();
         int count = 0;
