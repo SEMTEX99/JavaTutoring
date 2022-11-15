@@ -1,36 +1,24 @@
 public class Hello {
-    public int solution(String inputtext) {
-        String text = inputtext.replaceAll("[^a-zA-Z]", "").toLowerCase();
+    public int solution(String inputtext, String inputword) {
+        String randomChar = inputtext.replaceAll("[^a-zA-Z]", "").toLowerCase();
+        String word = inputword.replaceAll("[^a-zA-Z]", "").toLowerCase();
         int count = 0;
-        int b = 0;
-        int a = 0;
-        int l = 0;
-        int o = 0;
-        int n = 0;
-        for (int i = 0; i < text.length(); i++) {
-            if (text.charAt(i) == 'b') {
-                b++;
-            }
-            if (text.charAt(i) == 'a') {
-                a++;
-            }
-            if (text.charAt(i) == 'l') {
-                l++;
-            }
-            if (text.charAt(i) == 'o') {
-                o++;
-            }
-            if (text.charAt(i) == 'n') {
-                n++;
-            }
+        int[] randomCharCount = new int[26];
+        int[] wordCount = new int[26];
+        for (int i = 0; i < randomChar.length(); i++) {
+            randomCharCount[randomChar.charAt(i) - 'a']++;
         }
-        while (b >= 1 && a >= 1 && l >= 2 && o >= 2 && n >= 1) {
-            count++;
-            b--;
-            a--;
-            l = l - 2;
-            o = o - 2;
-            n--;
+        for (int i = 0; i < word.length(); i++) {
+            wordCount[word.charAt(i) - 'a']++;
+        }
+        for (int i = 0; i < 26; i++) {
+            if (wordCount[i] != 0) {
+                if (randomCharCount[i] / wordCount[i] > 0) {
+                    count = randomCharCount[i] / wordCount[i];
+                } else {
+                    return 0;
+                }
+            }
         }
         return count;
     }
