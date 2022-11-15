@@ -8,7 +8,7 @@ public class main {
         Scanner InputWord = new Scanner(System.in);
         System.out.println("Enter a word");
         String inputWord = InputWord.nextLine();
-        System.out.println(solution.solution(inputtext, inputWord));
+        System.out.println("the word "+ inputWord + "can be found "+ solution.solution(inputtext, inputWord)+ " times in the string you inputed");
     }
     
 }
