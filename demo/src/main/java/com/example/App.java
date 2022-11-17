@@ -6,8 +6,6 @@ import java.io.PrintWriter;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 import com.example.ExceptionHandling.InvalidCharacterException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
